@@ -29,4 +29,7 @@ build_script:
   #- yarn test
   - yarn build
 
+artifacts:
+  - path: build
+
 test: off
