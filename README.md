@@ -1,4 +1,5 @@
 # dnc-desktop
+[![Build status](https://ci.appveyor.com/api/projects/status/rsmworur4havkbd8?svg=true)](https://ci.appveyor.com/project/gaoliang/dnc-desktop)
 
 > a desktop client for dnc server
 
