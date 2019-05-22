@@ -15,5 +15,11 @@ export default {
   },
   pong () {
     return api.get('pong')
+  },
+  listPrograms () {
+    return api.get('list_programs').then(response => response.data)
+  },
+  uploadProgram (values) {
+    return api.post('add_program', values).then(response => response.data)
   }
 }
