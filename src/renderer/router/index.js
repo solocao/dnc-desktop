@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import Machines from '@/views/Machines/Machines'
+import MachinesPrograms from '@/views/Machines/MachinesPrograms'
+import Test from '@/views/Test'
 Vue.use(Router)
-
 export default new Router({
   mode: 'history',
   routes: [
@@ -14,7 +15,17 @@ export default new Router({
         {
           path: '/machines',
           name: 'machines',
-          component: require('@/views/Machines').default
+          component: Machines
+        },
+        {
+          path: '/machinesPrograms',
+          name: 'machinesPrograms',
+          component: MachinesPrograms
+        },
+        {
+          path: '/test',
+          name: 'test',
+          component: Test
         }
       ]
     },

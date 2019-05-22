@@ -20,6 +20,10 @@
             <a-icon type="setting" />
             <span class="nav-text">系统设置</span>
           </a-menu-item>
+          <a-menu-item key="test">
+            <a-icon type="check" />
+            <span class="nav-text">测试工具</span>
+          </a-menu-item>
         </a-menu>
       </div>
       <div class="bottom-container">

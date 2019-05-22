@@ -30,6 +30,6 @@ build_script:
   - yarn build
 
 artifacts:
-  - path: build
+  - path: build\*.exe
 
 test: off
