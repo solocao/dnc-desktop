@@ -11,25 +11,26 @@
       <a-button class="btn" type="danger" v-if="selectedRowKeys.length > 0">移除机床</a-button>
       <a-button class="btn" type="primary">手动添加机床</a-button>
     </a-row>
-      <div class="content-container">
-        <a-table :columns="columns"
+    <div class="content-container">
+      <a-table
+        :columns="columns"
         :rowKey="record => record.device_id"
         :dataSource="machinesList"
         :rowSelection="rowSelection"
         :loading="loading"
-  >
-  <template slot="operation" slot-scope="text, record, index">
-        <span>
-            <a-button type="primary" size='small' @click="listMachinesPrograms(record.room_id)">程序列表</a-button>
-        </span>
-        <span>
-            <a-button size='small'>运行状态</a-button>
-        </span>
+      >
+        <template slot="operation" slot-scope="text, record, index">
           <span>
-            <a-button type="danger" size='small'>下线关机</a-button>
-        </span>
-    </template>
-  </a-table>
+            <a-button type="primary" size="small" @click="listMachinesPrograms(record.room_id)">程序列表</a-button>
+          </span>
+          <span>
+            <a-button size="small">运行状态</a-button>
+          </span>
+          <span>
+            <a-button type="danger" size="small">下线关机</a-button>
+          </span>
+        </template>
+      </a-table>
     </div>
   </div>
 </template>
@@ -38,7 +39,11 @@
 import dncServices from '../../services/dncServices'
 const rowSelection = {
   onChange: (selectedRowKeys, selectedRows) => {
-    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows)
+    console.log(
+      `selectedRowKeys: ${selectedRowKeys}`,
+      'selectedRows: ',
+      selectedRows
+    )
   },
   onSelect: (record, selected, selectedRows) => {
     console.log(record, selected, selectedRows)
@@ -55,25 +60,25 @@ export default {
       selectedRowKeys: [],
       machinesList: [],
       rowSelection,
-      columns: [{
-        title: '设备id',
-        dataIndex: 'device_id',
-        sorter: true,
-        width: '40%'
-      },
-      {
-        title: '设备ip',
-        dataIndex: 'ip',
-        sorter: true,
-        width: '40%'
-      },
-      {
-        title: '操作',
-        dataIndex: 'operation',
-        scopedSlots: { customRender: 'operation' }
-      }
+      columns: [
+        {
+          title: '设备id',
+          dataIndex: 'device_id',
+          sorter: true,
+          width: '40%'
+        },
+        {
+          title: '设备ip',
+          dataIndex: 'ip',
+          sorter: true,
+          width: '40%'
+        },
+        {
+          title: '操作',
+          dataIndex: 'operation',
+          scopedSlots: { customRender: 'operation' }
+        }
       ]
-
     }
   },
   mounted () {

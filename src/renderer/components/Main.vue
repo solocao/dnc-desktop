@@ -16,6 +16,10 @@
             <a-icon type="code" />
             <span class="nav-text">程序管理</span>
           </a-menu-item>
+          <a-menu-item key="tools">
+            <a-icon type="issues-close" />
+            <span class="nav-text">G代码工具</span>
+          </a-menu-item>
           <a-menu-item key="setting">
             <a-icon type="setting" />
             <span class="nav-text">系统设置</span>

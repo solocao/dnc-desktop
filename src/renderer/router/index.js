@@ -5,6 +5,7 @@ import MachinesPrograms from '@/views/Machines/MachinesPrograms'
 import Test from '@/views/Test'
 import Programs from '@/views/Programs/programs'
 import AddProgram from '@/views/Programs/AddProgram'
+import Tools from '@/views/Tools'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -38,6 +39,11 @@ export default new Router({
           path: '/add_program',
           name: 'add_program',
           component: AddProgram
+        },
+        {
+          path: '/tools',
+          name: 'tools',
+          component: Tools
         }
       ]
     },

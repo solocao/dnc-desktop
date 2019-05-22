@@ -21,5 +21,8 @@ export default {
   },
   uploadProgram (values) {
     return api.post('add_program', values).then(response => response.data)
+  },
+  downloadProgram (programId, roomId) {
+    return api.post('download_program', {program_id: programId, room_id: roomId})
   }
 }
