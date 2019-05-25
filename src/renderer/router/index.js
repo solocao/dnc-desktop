@@ -3,9 +3,10 @@ import Router from 'vue-router'
 import Machines from '@/views/Machines/Machines'
 import MachinesPrograms from '@/views/Machines/MachinesPrograms'
 import Test from '@/views/Test'
-import Programs from '@/views/Programs/programs'
+import Programs from '@/views/Programs/Programs'
 import AddProgram from '@/views/Programs/AddProgram'
 import Tools from '@/views/Tools'
+import Settings from '@/views/Settings'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -44,6 +45,11 @@ export default new Router({
           path: '/tools',
           name: 'tools',
           component: Tools
+        },
+        {
+          path: '/settings',
+          name: 'settings',
+          component: Settings
         }
       ]
     },

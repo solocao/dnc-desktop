@@ -20,7 +20,7 @@
             <a-icon type="issues-close" />
             <span class="nav-text">G代码工具</span>
           </a-menu-item>
-          <a-menu-item key="setting">
+          <a-menu-item key="settings">
             <a-icon type="setting" />
             <span class="nav-text">系统设置</span>
           </a-menu-item>

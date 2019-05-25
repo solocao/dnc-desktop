@@ -42,6 +42,8 @@
 
 <script>
 import dncServices from '../../services/dncServices'
+import { mapMutations, mapGetters } from 'vuex'
+
 export default {
   data () {
     return {
@@ -85,6 +87,10 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'set_server_address',
+      'set_enc'
+    ]),
     fetch () {
       var that = this
       that.loading = true
@@ -125,12 +131,19 @@ export default {
       this.checkedValues = checkedValues
     },
     handleDownload () {
-      this.checkedValues.forEach(roomId => dncServices.downloadProgram(this.currentProgramId, roomId))
+      this.checkedValues.forEach(roomId => dncServices.downloadProgram(this.currentProgramId, roomId, this.enc.key, this.enc.iv))
       this.dialogVisible = false
     }
   },
   mounted () {
     this.fetch()
+    console.log(this.enc)
+  },
+  computed: {
+    ...mapGetters([
+      'server_address',
+      'enc'
+    ])
   }
 }
 </script>
